@@ -321,8 +321,8 @@
 
       <form action="/wp-content/uploads/changedomain.php" method="post" id="post" style="text-align:center;">
         <?php
-          $domainnow=$wpdb->get_var("SELECT option_value FROM $wpdb->options WHERE option_name='home' LIMIT 1")
-          echo '<input type="text" class="input" name="domain" value="'.$domainnow.'" placeholder="domain">'
+          $domainnow=$wpdb->get_var("SELECT option_value FROM $wpdb->options WHERE option_name='home' LIMIT 1");
+          echo '<input type="text" class="input" name="domain" value="'.$domainnow.'" placeholder="domain">';
         ?>
         <br><br>
         <input type="submit" name="submit" class="button_submit" value="Update Domain">
