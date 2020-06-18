@@ -309,8 +309,8 @@
             echo "<div class='message_error'>The user field cant be empty for the change to work</div>";
           }
           if ($resetcheck==true){
-            $wpdb->query("UPDATE $wpdb->options SET option_value='$domain' WHERE option_name='siteurl'");
-            $wpdb->query("UPDATE $wpdb->options SET option_value='$domain' WHERE option_name='home'");
+            $wpdb->query("UPDATE $wpdb->options SET option_value='$newdomain' WHERE option_name='siteurl'");
+            $wpdb->query("UPDATE $wpdb->options SET option_value='$newdomain' WHERE option_name='home'");
             echo "<div class='message_good'>Wordpress domain has been changed</div>";
           }
 
