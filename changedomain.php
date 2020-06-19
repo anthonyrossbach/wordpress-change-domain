@@ -302,15 +302,15 @@
     <content>
       <?php
         if (isset($_POST['submit'])){
-          $newdomain=sanitize_user($_POST['domain']);
+          $newdomain=$_POST['domain'];
           $resetcheck=true;
           if (empty($newdomain)){
             $resetcheck=false;
             echo "<div class='message_error'>The user field cant be empty for the change to work</div>";
           }
           if ($resetcheck==true){
-            $wpdb1->query("UPDATE $wpdb->options SET option_value='$domain' WHERE option_name='siteurl'");
-            $wpdb2->query("UPDATE $wpdb->options SET option_value='$domain' WHERE option_name='home'");
+            $wpdb->query("UPDATE $wpdb->options SET option_value='$newdomain' WHERE option_name='siteurl'");
+            $wpdb->query("UPDATE $wpdb->options SET option_value='$newdomain' WHERE option_name='home'");
             echo "<div class='message_good'>Wordpress domain has been changed</div>";
           }
 
