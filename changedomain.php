@@ -1,6 +1,5 @@
 <?php
-  //This is designed to work from the /wp-content/uploads folder.
-  require '../../wp-blog-header.php';
+  require 'wp-blog-header.php';
   global $wpdb;
 ?>
 <!DOCTYPE html>
@@ -319,7 +318,7 @@
       ?>
       <p>This script will change the domain set to your wordpress install. By changing the domain it will load via the new domain but some resorces still may try to load using the old url. Rember to include http:// or https://.</p>
 
-      <form action="/wp-content/uploads/changedomain.php" method="post" id="post" style="text-align:center;">
+      <form action="changedomain.php" method="post" id="post" style="text-align:center;">
         <?php
           $domainnow=$wpdb->get_var("SELECT option_value FROM $wpdb->options WHERE option_name='home' LIMIT 1");
           echo '<input type="text" class="input" name="domain" value="'.$domainnow.'" placeholder="domain">';
